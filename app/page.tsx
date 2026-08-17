@@ -45,37 +45,37 @@ export default function Home() {
     router.refresh();
   }
 
-  async function handleResetPassword(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
+ async function handleResetPassword(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
 
-    setResetError("");
-    setResetSent(false);
-    setResetLoading(true);
+  setResetError("");
+  setResetSent(false);
+  setResetLoading(true);
 
-    const redirectTo =
-  "http://192.168.100.215:3000/restablecer-contrasena";
+  const redirectTo =
+    `${window.location.origin}/restablecer-contrasena`;
 
-    const { error: resetPasswordError } =
-      await supabase.auth.resetPasswordForEmail(resetEmail, {
-        redirectTo,
-      });
+  const { error: resetPasswordError } =
+    await supabase.auth.resetPasswordForEmail(resetEmail, {
+      redirectTo,
+    });
 
-    if (resetPasswordError) {
-      console.error(
-        "Error al enviar recuperación de contraseña:",
-        resetPasswordError,
-      );
+  if (resetPasswordError) {
+    console.error(
+      "Error al enviar recuperación de contraseña:",
+      resetPasswordError,
+    );
 
-      setResetError(
-        "No pudimos enviar el correo de recuperación. Verificá el correo e intentá nuevamente.",
-      );
-      setResetLoading(false);
-      return;
-    }
-
-    setResetSent(true);
+    setResetError(
+      "No pudimos enviar el correo de recuperación. Verificá el correo e intentá nuevamente.",
+    );
     setResetLoading(false);
+    return;
   }
+
+  setResetSent(true);
+  setResetLoading(false);
+}
 
   const mensajeSoporte = encodeURIComponent(
     "Hola José, necesito ayuda para ingresar a mi panel de Martínez Automatizaciones.",
