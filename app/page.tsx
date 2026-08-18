@@ -53,7 +53,7 @@ export default function Home() {
   setResetLoading(true);
 
   const redirectTo =
-    `${window.location.origin}/restablecer-contrasena`;
+    `${window.location.origin}/restablecer-contraseña`;
 
   const { error: resetPasswordError } =
     await supabase.auth.resetPasswordForEmail(resetEmail, {
