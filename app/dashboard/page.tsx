@@ -894,7 +894,7 @@ export default function Dashboard() {
             <div>
               <div className="flex flex-wrap items-center gap-2.5">
                 <h1 className="text-xl font-bold tracking-tight sm:text-2xl">
-                  Peluquería
+                  Peluquería Zuchelli
                 </h1>
                 <span className="inline-flex items-center gap-1.5 rounded-full border border-emerald-200 bg-emerald-50 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-emerald-600">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
